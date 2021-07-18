@@ -5,7 +5,7 @@ TAIL=0
 
 headWins=0
 tailWins=0
-for((i=0;i<10;i++))
+while [ $headWins -lt 21 ] && [ $tailWins -lt 21 ]
 do
 	simulate=$((RANDOM%2))
 	if [ $simulate -eq $HEAD ]
@@ -16,5 +16,12 @@ do
 fi
 done
 
-echo head wins:$headWins
-echo tail wins:$tailWins
+if [ $headWins -eq $tailWins ]
+then
+	echo "its a tie"
+elif [ $headWins -gt $tailWins ]
+then
+	echo "HEAD wins by: "$((headWins-tailWins))
+else
+	echo "TAIL wins by: "$((tailWins-headWins))
+fi
