@@ -33,7 +33,7 @@ fi
 
 if [ $headWins -gt $tailWins ]
 then
-	echo "HEAD wins by: "$((headWins-tailWins))
+	echo "HEAD Wins by: "$((headWins-tailWins))
 else
-	echo "TAIL wins by: "$((tailWins-headWins))
+	echo "TAIL Wins by: "$((tailWins-headWins))
 fi
